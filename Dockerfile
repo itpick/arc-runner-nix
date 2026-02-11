@@ -5,7 +5,7 @@ FROM nixos/nix:latest AS nix-builder
 RUN mkdir -p /etc/nix && echo "filter-syscalls = false" >> /etc/nix/nix.conf
 
 RUN nix-channel --update && \
-    nix-env -iA nixpkgs.skopeo nixpkgs.jq nixpkgs.cosign nixpkgs.syft
+    nix-env -iA nixpkgs.skopeo nixpkgs.jq nixpkgs.cosign nixpkgs.syft nixpkgs.attic-client
 
 # Stage 2: Final runner image
 FROM ghcr.io/actions/actions-runner:latest
