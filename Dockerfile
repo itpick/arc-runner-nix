@@ -16,6 +16,7 @@ USER root
 RUN apt-get update && apt-get install -y \
     curl \
     xz-utils \
+    gettext-base \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy nix store from builder
